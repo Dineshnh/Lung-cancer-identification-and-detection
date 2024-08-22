@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lung Cancer Prediction</title>
+    <style>
+        *{
+        padding:0;
+        margin:0;
+        }
+       body {
+            font-family: 'Arial', sans-serif;
+            background-color: #add8e6;
+            background-size: 100%;
+            background-repeat: no-repeat;
+
+        }
+
+        nav {
+background-image: linear-gradient(to right,#674EA7,#9FC5E8);
+            padding: 1em;
+            display:flex;
+            justify-content:space-between;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 1em;
+            font-weight:bold;
+            display: inline-block;
+            font-size:1.2rem;
+        }
+        nav a:hover{
+           color:white;
+        }
+        .image_input{
+        display:flex;
+           align-items:center;
+           justify-content:center;
+           flex-direction:column;
+           width:100vw;
+           height:100vh;
+        }
+
+        .btn{
+          padding:10px;
+          width:10rem;
+          height:3rem;
+          border:2px solid black;
+          border-radius:10px;
+          font-size:1rem;
+          background-image: linear-gradient(to right,#674EA7,#9FC5E8);
+          font-weight:bold;
+          transition:0.5s;
+          color:black;
+        }
+
+        .btn:hover{
+           width:11rem;
+           height:3.5rem;
+           font-size:1.2rem;
+           background-image:none;
+           background-color:#00FFFF;
+        }
+
+        input[type="file"]::file-selector-button {
+  border-radius: 10px;
+  padding: 0 16px;
+  height: 40px;
+  cursor: pointer;
+  background-color: white;
+  font-size:1.2rem;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+  margin-right: 16px;
+  transition: background-color 200ms;
+}
+
+        input[type="file"]::file-selector-button:hover {
+  background-color: #f3f4f6;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div>
+            <h1  style="margin: 0;color:white;font-family: Times New Roman, Times, serif;font-size:2rem
+">Lung Cancer Prediction</h1>
+        </div>
+        <div>
+            <a href="{{ url_for('Home')}}">Home</a>
+        <a href="{{ url_for('Predict')}}">Predict</a>
+        </div>
+    </nav>
+
+<div class="image_input" style="display:flex;flex-direction:column;align-items:center;justify-content:center">
+
+	<h1 style="font-size:5rem;margin-bottom:2.5rem;">Predict Lung cancer </h1>
+
+	<form method="post" action="/Predict" enctype="multipart/form-data" style="display:flex;flex-direction:column;gap:5rem">
+    <input type="file" name="image" style="">
+    <input type="submit" value="Predict" class="btn">
+    <div style="">
+        <h2 style="">{{prediction_text}} </h2>
+    </div>
+    </form>
+
+    </div>
+</body>
+</html>

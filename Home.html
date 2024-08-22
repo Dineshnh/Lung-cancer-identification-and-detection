@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Lung Cancer Prediction</title>
+    <style>
+           *{
+        padding:0;
+        margin:0;
+        }
+        .main{
+            font-family: 'Arial', sans-serif;
+<!--            background-image: url('../static/Lung2.jpg');-->
+            width:100vw;
+            height:100vh;
+            background-color: #add8e6;
+            background-repeat: no-repeat;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            gap:0.5rem;
+        }
+
+
+       .navbar{
+           background-image: linear-gradient(to right,#674EA7,#9FC5E8);
+            padding: 1em;
+            display:flex;
+            justify-content:space-between;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 1em;
+            display: inline-block;
+            font-weight:bold;
+            font-size:1.2rem;
+            font-family:Times New Roman, Times, serif;
+        }
+         nav a:hover{
+           color:white;
+        }
+
+    </style>
+</head>
+
+<body>
+
+     <nav class="navbar">
+        <div>
+            <h1 style="margin: 0;color:white;font-family: Times New Roman, Times, serif;font-size:2rem
+">Lung Cancer Prediction</h1>
+        </div>
+        <div>
+            <a href="{{ url_for('Home')}}">Home</a>
+        <a href="{{ url_for('Predict')}}">Predict</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <h2 style="font-size:3.5rem">Welcome to our Lung Cancer Prediction Platform</h2>
+        <p style="font-size:2rem">Explore our advanced technology for early detection and prediction of lung cancer.</p>
+    </main>
+
+</body>
+
+</html>
