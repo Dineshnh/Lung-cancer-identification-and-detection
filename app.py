@@ -8,7 +8,7 @@ import io
 app = Flask(__name__)
 
 # Load the machine learning model
-with open(r"C:\Users\Dinesh\Desktop\Dinesh\Lung_cancer_prediction1.pkl", 'rb') as f:
+with open(r"Lung_cancer_prediction1.pkl", 'rb') as f:
     ml_model = pickle.load(f)
 
 # Assuming you have defined class_names
@@ -69,6 +69,7 @@ def Predict():
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', port=8082)
+
 
 
 
